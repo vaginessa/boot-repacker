@@ -5,6 +5,16 @@
         <v-row align="center" justify="center">
           <v-col cols="12" sm="10" md="8">
             <header>
+              <div class="langs">
+                <v-select
+                  solo
+                  dense
+                  flat
+                  v-model="$root.$i18n.locale"
+                  v-bind:items="langs"
+                  prepend-inner-icon="mdi-web"
+                />
+              </div>
               <h1 v-html="$t('title')" />
             </header>
 
@@ -72,6 +82,15 @@ import buildImage from './utils/buildImage';
 import calculateImageId from './utils/calculateImageId';
 import calculatePosition from './utils/calculatePosition';
 
+import messages from './i18n';
+
+const langs = Object.keys(messages)
+  .sort()
+  .map(lang => ({
+    text: messages[lang].name,
+    value: lang,
+  }));
+
 export default {
   name: 'App',
   components: {
@@ -80,6 +99,7 @@ export default {
   },
   data() {
     return {
+      langs: langs,
       panel: 0,
       file: null,
       blob: null,
@@ -168,10 +188,20 @@ header h1 {
   font-weight: normal;
 }
 
+.langs {
+  max-width: 150px;
+  height: 38px;
+  float: right;
+  font-size: 12px;
+  margin-right: 4px;
+}
+
 footer {
+  min-height: 38px;
+  line-height: 38px;
   font-size: 12px;
   color: #999;
   text-align: center;
-  margin: 10px 0 0;
+  margin: 0 0 10px 10px;
 }
 </style>
