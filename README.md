@@ -7,6 +7,7 @@ Unpacking and repacking Android bootable images in your browser.
 
 ```
 npm install
+npm run build-i18n
 npm run serve
 ```
 
