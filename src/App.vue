@@ -49,7 +49,7 @@
             </v-expansion-panels>
 
             <footer>
-              Copyright &copy; 2020 MoKee Open Source Project
+              Copyright &copy; 2020 MoKee Open Source Project,Modified by Anya1014
             </footer>
           </v-col>
         </v-row>
