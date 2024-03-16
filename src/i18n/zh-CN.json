@@ -1,0 +1,13 @@
+ {
+  "name": "中文 (简体)",
+  "title": "Boot Repacker",
+  "step1:title": "1. 打开一个Boot镜像文件",
+  "step1:image": "1. 镜像文件：",
+  "step2:customize": "2. 自定义",
+  "step2:reset": "重置所有",
+  "step2:back": "返回",
+  "step2:next": "下一步",
+  "step3:export": "3. 导出",
+  "step3:download": "导出",
+  "END": ""
+}

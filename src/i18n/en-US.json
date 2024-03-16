@@ -1,0 +1,13 @@
+ {
+  "name": "English (US)",
+  "title": "Boot Repacker",
+  "step1:title": "1. Open an existing image",
+  "step1:image": "1. Image: ",
+  "step2:customize": "2. Customize",
+  "step2:reset": "Reset all",
+  "step2:back": "Back",
+  "step2:next": "Next",
+  "step3:export": "3. Export",
+  "step3:download": "Export",
+  "END": ""
+}

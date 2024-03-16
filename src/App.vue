@@ -5,21 +5,21 @@
         <v-row align="center" justify="center">
           <v-col cols="12" sm="10" md="8">
             <header>
-              <h1>Boot Repacker by MoKee</h1>
+              <h1 v-html="$t('title')" />
             </header>
 
             <v-expansion-panels accordion mandatory v-model="panel" v-bind:readonly="!file">
               <v-expansion-panel>
                 <v-expansion-panel-header>
-                  <strong v-if="file == null">1. Open an existing image</strong>
-                  <strong v-else>1. Image: {{file.name}}</strong>
+                  <strong v-if="file == null">{{ $t('step1:title') }}</strong>
+                  <strong v-else>{{ $t('step1:image') }}{{file.name}}</strong>
                 </v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <FileDrop v-on:change="handleFile" />
                 </v-expansion-panel-content>
               </v-expansion-panel>
               <v-expansion-panel>
-                <v-expansion-panel-header><strong>2. Customize</strong></v-expansion-panel-header>
+                <v-expansion-panel-header><strong>{{ $t('step2:customize') }}</strong></v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <Form
                     v-bind:initial="initial"
@@ -30,18 +30,18 @@
                     v-on:export="handleExport"
                   />
                   <div class="d-flex">
-                    <v-btn color="primary" text v-on:click="handleResetAll"><v-icon left>mdi-restore</v-icon> Reset all</v-btn>
-                    <v-btn color="primary" text class="ml-auto" style="margin-right: 1em;" v-on:click="panel = 0">Back</v-btn>
-                    <v-btn color="primary" depressed v-on:click="panel = 2">Next</v-btn>
+                    <v-btn color="primary" text v-on:click="handleResetAll"><v-icon left>mdi-restore</v-icon>{{ $t('step2:reset') }}</v-btn>
+                    <v-btn color="primary" text class="ml-auto" style="margin-right: 1em;" v-on:click="panel = 0">{{ $t('step2:back') }}</v-btn>
+                    <v-btn color="primary" depressed v-on:click="panel = 2">{{ $t('step2:next') }}</v-btn>
                   </div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
               <v-expansion-panel>
-                <v-expansion-panel-header><strong>3. Export</strong></v-expansion-panel-header>
+                <v-expansion-panel-header><strong>{{ $t('step3:export') }}</strong></v-expansion-panel-header>
                 <v-expansion-panel-content>
                   <div class="d-flex flex-column justify-center align-center" style="padding-top: 40px; padding-bottom: 40px;">
                     <v-btn color="primary" depressed large v-on:click="handleBuild">
-                      <v-icon left>mdi-download</v-icon> Export
+                      <v-icon left>mdi-download</v-icon>{{ $t('step3:download') }}
                     </v-btn>
                   </div>
                 </v-expansion-panel-content>
