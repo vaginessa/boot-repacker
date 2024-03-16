@@ -8,9 +8,9 @@
     v-bind:drop-directory="false"
     v-on:input-file="selectFile"
   >
-    <div class="upload-hint active" v-if="uploader && uploader.dropActive" v-html="'Drop the image here'" />
+    <div class="upload-hint active" v-if="uploader && uploader.dropActive" v-html="$t('dropfile:active')" />
     <div class="upload-hint selected" v-else-if="selected">{{selected ? selected.name : null}}</div>
-    <div class="upload-hint" v-else v-html="'Drop or <a>select</a> an image'" />
+    <div class="upload-hint" v-else v-html="$t('dropfile:title')" />
   </upload>
 </template>
 

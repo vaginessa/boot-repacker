@@ -13,7 +13,7 @@
     <template v-slot:append v-if="modified">
       <InlineButton
         icon="mdi-restore"
-        hint="Reset"
+        :hint="$t('texteditor:reset')"
         v-on:click="handleReset"
       />
     </template>

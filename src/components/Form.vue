@@ -4,14 +4,14 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Magic"
+          :label="$t('forum:magic')"
           v-bind:initial="initial.magic"
           v-bind:value="initial.magic"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="Page size"
+          ::label="$t('forum:pagesize')"
           v-bind:dec="true"
           v-bind:initial="initial.page_size"
           v-bind:value="values.page_size"
@@ -20,7 +20,7 @@
       </v-col>
       <v-col cols="6" lg="3">
         <SelectEditor
-          label="Header version"
+          :label="$t('forum:headerversion')"
           v-bind:items="header_versions"
           v-bind:initial="initial.header_version"
           v-bind:value="values.header_version"
@@ -29,7 +29,7 @@
       </v-col>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Header size"
+          :label="$t('forum:headersize')"
           v-bind:initial="initial.header_size"
           v-bind:value="values.header_size"
         />
@@ -39,7 +39,7 @@
     <v-row>
       <v-col cols="12">
         <ValuePresenter
-          label="Image ID"
+          :label="$t('forum:imageid')"
           v-bind:initial="initial.img_id"
           v-bind:value="values.img_id"
         />
@@ -49,14 +49,14 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Kernel size"
+          :label="$t('forum:kernelsize')"
           v-bind:initial="initial.kernel_size"
           v-bind:value="values.kernel_size"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="Kernel address"
+          :label="$t('forum:kerneladdress')"
           v-bind:hex="4"
           v-bind:initial="initial.kernel_addr"
           v-bind:value="values.kernel_addr"
@@ -65,7 +65,7 @@
       </v-col>
       <v-col cols="12" lg="6">
         <ImageReplacer
-          label="Kernel image"
+          :label="$t('forum:kernelimage')"
           default-name="kernel.img"
           v-bind:initial="initial.kernel"
           v-bind:value="values.kernel"
@@ -79,14 +79,14 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Ramdisk size"
+          :label="$t('forum:ramdisksize')"
           v-bind:initial="initial.ramdisk_size"
           v-bind:value="values.ramdisk_size"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="Ramdisk address"
+          :label="$t('forum:ramdiskaddress')"
           v-bind:hex="4"
           v-bind:initial="initial.ramdisk_addr"
           v-bind:value="values.ramdisk_addr"
@@ -95,7 +95,7 @@
       </v-col>
       <v-col cols="12" lg="6">
         <ImageReplacer
-          label="Ramdisk image"
+          :label="$t('forum:ramdiskimage')"
           default-name="ramdisk.cpio.gz"
           v-bind:initial="initial.ramdisk"
           v-bind:value="values.ramdisk"
@@ -109,14 +109,14 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="2nd-stage BL size"
+          :label="$t('forum:2sbsize')"
           v-bind:initial="initial.second_size"
           v-bind:value="values.second_size"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="2nd-stage BL address"
+          :label="$t('forum:2sbaddress')"
           v-bind:hex="4"
           v-bind:initial="initial.second_addr"
           v-bind:value="values.second_addr"
@@ -125,7 +125,7 @@
       </v-col>
       <v-col cols="12" lg="6">
         <ImageReplacer
-          label="2nd-stage BL image"
+          :label="$t('forum:2sbimage')"
           default-name="second.img"
           v-bind:initial="initial.second"
           v-bind:value="values.second"
@@ -139,7 +139,7 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="Tags address"
+          :label="$t('forum:tagsaddress')"
           v-bind:hex="4"
           v-bind:initial="initial.tags_addr"
           v-bind:value="values.tags_addr"
@@ -148,14 +148,14 @@
       </v-col>
       <v-col cols="6" lg="3" v-if="values.header_version == 0">
         <ValuePresenter
-          label="DT size"
+          :label="$t('forum:dtsize')"
           v-bind:initial="initial.dt_size"
           v-bind:value="values.dt_size"
         />
       </v-col>
       <v-col cols="12" lg="6" v-if="values.header_version == 0">
         <ImageReplacer
-          label="DT image"
+          :label="$t('forum:dtimage')"
           default-name="dt.img"
           v-bind:initial="initial.dt"
           v-bind:value="values.dt"
@@ -169,21 +169,21 @@
     <v-row v-if="values.header_version > 0">
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Recovery DTBO size"
+          :label="$t('forum:recdtbosize')"
           v-bind:initial="initial.recovery_dtbo_size"
           v-bind:value="values.recovery_dtbo_size"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="Recovery DTBO offset"
+          :label="$t('forum:recdtbooffset')"
           v-bind:initial="initial.recovery_dtbo_offset"
           v-bind:value="values.recovery_dtbo_offset"
         />
       </v-col>
       <v-col cols="12" lg="6">
         <ImageReplacer
-          label="Recovery DTBO image"
+          :label="$t('forum:recdtboimage')"
           default-name="recovery_dtbo.img"
           v-bind:initial="initial.recovery_dtbo"
           v-bind:value="values.recovery_dtbo"
@@ -197,14 +197,14 @@
     <v-row v-if="values.header_version > 1">
       <v-col cols="6" lg="3">
         <ValuePresenter
-          label="DTB size"
+          :label="$t('forum:dtbsize')"
           v-bind:initial="initial.dtb_size"
           v-bind:value="values.dtb_size"
         />
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="DTB address"
+          :label="$t('forum:dtbaddress')"
           v-bind:hex="4"
           v-bind:initial="initial.dtb_addr"
           v-bind:value="values.dtb_addr"
@@ -213,7 +213,7 @@
       </v-col>
       <v-col cols="12" lg="6">
         <ImageReplacer
-          label="DTB image"
+          :label="$t('forum:dtbimage')"
           default-name="dtb.img"
           v-bind:initial="initial.dtb"
           v-bind:value="values.dtb"
@@ -227,7 +227,7 @@
     <v-row>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="OS patch level"
+          :label="$t('forum:ospatchlevel')"
           v-bind:reg="/^\d{4}-\d{2}$/"
           v-bind:initial="initial.os_patch_level"
           v-bind:value="values.os_patch_level"
@@ -236,7 +236,7 @@
       </v-col>
       <v-col cols="6" lg="3">
         <ValueEditor
-          label="OS version"
+          :label="$t('forum:osversion')"
           v-bind:reg="/^\d+\.\d+\.\d+$/"
           v-bind:initial="initial.os_version"
           v-bind:value="values.os_version"
@@ -245,7 +245,7 @@
       </v-col>
       <v-col cols="12" lg="6">
         <ValueEditor
-          label="Board"
+          :label="$t('forum:board')"
           v-bind:initial="initial.board"
           v-bind:value="values.board"
           v-on:change="(value) => handleChange('board', value)"
@@ -256,7 +256,7 @@
     <v-row>
       <v-col cols="12">
         <TextEditor
-          label="cmdline"
+          :label="$t('forum:cmdline')"
           rows="3"
           v-bind:max-length="512 + 1024"
           v-bind:initial="initial.cmdline"

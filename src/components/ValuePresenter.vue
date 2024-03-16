@@ -4,7 +4,7 @@
     v-bind:label="label"
     v-bind:value="value"
     v-bind:messages="value != initial ? 'Modified' : ''"
-    placeholder="Not present"
+    :placeholder="$t('valuepresenter:notpresent')"
     disabled
   />
 </template>

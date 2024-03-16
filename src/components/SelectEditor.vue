@@ -9,7 +9,7 @@
     <template v-slot:append-outer v-if="modified">
       <InlineButton
         icon="mdi-restore"
-        hint="Reset"
+        :hint="$t('selecteditor:reset')"
         v-on:click="handleReset"
       />
     </template>

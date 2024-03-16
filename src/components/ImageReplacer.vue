@@ -3,28 +3,28 @@
     class="monospace"
     v-bind:label="label"
     v-bind:value="name"
-    v-bind:messages="modified ? 'Modified' : ''"
-    v-bind:placeholder="removed ? 'Removed' : 'Not present'"
+    v-bind:messages="modified ? $t('imagereplacer:modified') : ''"
+    v-bind:placeholder="removed ? $t('imagereplacer:removed') : $t('imagereplacer:notpresent')"
     readonly
   >
     <template v-slot:append>
       <template v-if="!modified">
         <InlineButton
           icon="mdi-dots-vertical"
-          hint="Replace"
+          :hint="$t('imagereplacer:replace')"
           v-on:click="handleReplace"
         />
         <InlineButton
           v-if="presence"
           icon="mdi-close"
-          hint="Remove"
+          :hint="$t('imagereplacer:remove')"
           v-on:click="handleRemove"
         />
       </template>
       <template v-else>
         <InlineButton
           icon="mdi-restore"
-          hint="Reset"
+          :hint="$t('imagereplacer:reset')"
           v-on:click="handleReset"
         />
       </template>
@@ -33,7 +33,7 @@
     <template v-slot:append-outer>
       <InlineButton
         icon="mdi-download"
-        hint="Export"
+        :hint="$t('imagereplacer:export')"
         v-bind:disabled="!presence || modified"
         v-on:click="handleExport"
       />
