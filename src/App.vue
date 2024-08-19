@@ -59,7 +59,7 @@
             </v-expansion-panels>
 
             <footer>
-              Copyright &copy; 2020 MoKee Open Source Project,Modified by Anya1014 | <a href="https://github.com/Anya1014CN/boot-repacker">Github</a>
+              Copyright &copy; 2020 MoKee Open Source Project, mod by vaginessa| <a href="https://github.com/vaginessa/boot-repacker">Github</a>
             </footer>
           </v-col>
         </v-row>
